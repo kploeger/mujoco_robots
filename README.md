@@ -12,7 +12,7 @@ A colltection of robots at IAS Lab modeled in MuJoCo with mujoco-py
 
 ## Install instructions:
     
-    git clone git@git.ias.informatik.tu-darmstadt.de:ploeger/mujoco_robots.git
+    git clone git@github.com:kploeger/mujoco_robots.git
     pip install -e mujoco_robots/ --user
     
 ## Usage
