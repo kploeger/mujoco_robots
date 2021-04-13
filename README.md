@@ -8,6 +8,7 @@ A colltection of robots at IAS Lab modeled in MuJoCo with mujoco-py
 
 ### Tested with:
 - Python 3.5, MuJoCo 2.00, mujoco-py 2.0.2.2
+- Python 3.6, Mujoco 2.00, mujoco-py 2.0.2.13
 
 
 ## Install instructions:
