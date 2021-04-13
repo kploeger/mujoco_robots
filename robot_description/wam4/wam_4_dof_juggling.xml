@@ -29,6 +29,9 @@
             <geom contype="0" conaffinity="0" group="1" rgba="0 0 1 1"
                   type="cylinder" size=".01 0.15" pos="0 0 0.15" euler="0 0 0"/>
         </default>
+        <default class="cone">
+            <geom type="mesh" contype="0" conaffinity="1" group="3" rgba="0.5 0.6 0.7 1" solref="-16000 -300" density="0"/>
+        </default>
     </default>
 
     <asset>
@@ -46,6 +49,8 @@
         <mesh file="elbow_link_fine.stl"/>
         <mesh file="elbow_link_convex.stl"/>
         <mesh file="wrist_palm_link_fine.stl"/>
+        <mesh file="cone_convex_part_side.stl"/>
+        <mesh file="throwing_tool.stl"/>
 
         <texture name="groundplane" type="2d" builtin="checker" rgb1=".25 .26 .25"
                  rgb2=".22 .22 .22" width="100" height="100" mark="edge" markrgb=".3 .3 .3"/>
@@ -129,11 +134,55 @@
 <!--                                    <geom class="y_axis"/>-->
 <!--                                    <geom class="z_axis"/>-->
 
-                                    <!--<inertial pos="0 0.01 0.07" mass="0.315"/>-->
-                                    <!--<site name="wam/mass_sites/tool" pos="0 0.01 0.07"/>-->
-                                    <!--<site name="wam/sites/tool" pos="0 0 0.048035" size="0.01" rgba="1 0 0 1" />-->
+                                    <geom class="viz" mesh="throwing_tool" euler="0 0 0" rgba=".3 .3 .3 1"/>
 
-                               </body>
+                                    <body name="tool/cone_base" pos="0 0.002 0.108" euler="-2.0943951023931 0 0">
+                                        <!--<geom class="x_axis"/>-->
+                                        <!--<geom class="y_axis"/>-->
+                                        <!--<geom class="z_axis"/>-->
+
+                                        <inertial pos="0 0.01 0.07" mass="0.315"/>
+                                        <site name="wam/mass_sites/tool" pos="0 0.01 0.07"/>
+                                        <site name="wam/sites/tool" pos="0 0 0.048035" size="0.01" rgba="1 0 0 1" />
+
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 0"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 0.174"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 0.348"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 0.523"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 0.697"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 0.872"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 1.046"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 1.221"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 1.395"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 1.570"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 1.744"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 1.918"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 2.093"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 2.267"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 2.442"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 2.616"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 2.791"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 2.965"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -0.174"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -0.348"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -0.523"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -0.697"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -0.872"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -1.046"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -1.221"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -1.395"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -1.570"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -1.744"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -1.918"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -2.093"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -2.267"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -2.442"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -2.616"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -2.791"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -2.965"/>
+                                        <geom class="cone" mesh="cone_convex_part_side" euler="0 0 -3.142"/>
+                                    </body>
+                                </body>
                             </body>
                         </body>
                     </body>
@@ -141,7 +190,17 @@
             </body>
         </body>
 
-       <body name="endeff_des" pos="0 0 0.84" mocap="true">
+        <body name="balls/ball1" pos="0 0.9 1.26">
+            <freejoint name="ball1"/>
+            <!--<geom type="sphere" size="0.0375" mass="0.05" contype="1" conaffinity="1" rgba=".75 .75 .75 1" solref="-160000 -200" condim="6" friction="0.00001 0.00001 0.05"/>-->
+            <geom type="sphere" size="0.0375" mass="0.05" contype="1" conaffinity="1" rgba=".75 .75 .75 1" solref="-160000 -200" condim="6" friction="0.0001 0.0001 0.05"/>
+        </body>
+
+        <body name="balls_des/ball1" pos="0 0 0.84" mocap="true">
+            <geom class="viz" type="sphere" size="0.0375" rgba="0 0.5 1 0.3" />
+        </body>
+
+        <body name="endeff_des" pos="0 0 0.84" mocap="true">
             <geom class="viz" type="sphere" size="0.01" rgba="1 0 0 0.3" />
         </body>
 

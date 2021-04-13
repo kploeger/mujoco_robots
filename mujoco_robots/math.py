@@ -1,7 +1,6 @@
 import numpy as np
 
 
-
 def transform_pos(trafo, pos):
     if pos.ndim == 1:
         assert pos.size == 3
